@@ -1,0 +1,6 @@
+usr.conf
+usr.sh
+vars.conf
+ngx-runtime/*temp
+ngx-runtime/logs/*
+ngx-runtime/conf

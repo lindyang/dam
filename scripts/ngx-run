@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# find nginx/openresty
+if [ -x /usr/local/openresty/nginx/sbin/nginx ]; then
+    NGINX=/usr/local/openresty/nginx/sbin/nginx
+else
+    NGINX=$(which nginx)
+fi
+
+CONF=conf/${ENV:-dev}.conf  # ENV not declare or empty
+PWD=$(cd `dirname $0`; cd ../; pwd)
+$NGINX -p $PWD/ngx-runtime -c $CONF "$@"
